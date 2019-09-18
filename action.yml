@@ -1,0 +1,20 @@
+name: 'bom-check'
+description: 'Check for BOM in specified path'
+
+branding:
+  icon: check-square
+  color: blue
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+
+inputs:
+  path:
+    description: 'Path to check'
+    required: false
+    default: '.'
+
+args:
+  - ${{ inputs.path }}
+
