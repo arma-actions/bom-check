@@ -10,11 +10,10 @@ runs:
   image: 'Dockerfile'
 
 inputs:
-  path:
+  checkPath:
     description: 'Path to check'
     required: false
     default: '.'
 
 args:
-  - ${{ inputs.path }}
-
+  - ${{ inputs.checkPath }}
