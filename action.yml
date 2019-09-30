@@ -8,12 +8,11 @@ branding:
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+  - ${{ inputs.path }}
 
 inputs:
-  checkPath:
+  path:
     description: 'Path to check'
     required: false
     default: '.'
-
-args:
-  - ${{ inputs.checkPath }}
