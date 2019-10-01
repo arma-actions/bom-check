@@ -1,4 +1,4 @@
-FROM alpine:3.10 as bom-check
+FROM debian:10-slim as bom-check
 
 COPY entrypoint.sh /entrypoint.sh
 

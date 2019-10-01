@@ -1,8 +1,14 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "Searching for BOM in: $1"
 
-if grep -rlI $'\xEF\xBB\xBF' $1; then
+if \
+    grep \
+        -rlI \
+        --exclude-dir="\.git" \
+        $'\xEF\xBB\xBF' \
+        $1 \
+; then
     echo "Found BOM in files!"
     exit 1;
 fi
