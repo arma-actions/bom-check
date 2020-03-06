@@ -22,7 +22,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - uses: arma-actions/bom-check@v1.0
+      - uses: arma-actions/bom-check@v1
         name: Check for BOM
         # with:
           # path: 'addons'
