@@ -1,0 +1,29 @@
+name: Test
+
+on:
+    push:
+        branches:
+            - master
+            - dev
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v1
+
+            - name: Make executable
+              run: chmod +x ./entrypoint.sh
+
+            - name: Run test - No BOM
+              run: |
+                (./entrypoint.sh tests/ACEX-Logo_no_bom.eps) \
+                && exit 0 \
+                || exit 1;
+
+            - name: Run test - BOM
+              if: always()
+              run: |
+                (./entrypoint.sh tests/ACEX-Logo_bom.eps) \
+                && exit 1 \
+                || exit 0;

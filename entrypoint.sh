@@ -6,7 +6,7 @@ if \
     grep \
         -rlI \
         --exclude-dir="\.git" \
-        $'\xEF\xBB\xBF' \
+        $'^\xEF\xBB\xBF' \
         $1 \
 ; then
     echo "Found BOM in files!"
